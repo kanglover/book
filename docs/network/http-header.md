@@ -325,5 +325,5 @@ Cookie 请求首部字段，服务端接收到的 Cookie 信息。
 ## 6.8. 其他首部字段
 
 -   X-Frame-Options：控制网站内容在其他 Web 网站的 Frame 标签内的显示。DENY 代表不允许任何网站 frame 加载，SAMEORIGIN 代表同源域名 frame 可以加载该页面。防止点击劫持。
-- X-XSS-Protection：启用或关闭 XSS 过滤。
-- DNT：Do Not Track 请求首部字段，告知服务器用户是否愿意接收来自浏览器的跟踪信息。
+-   X-XSS-Protection：启用或关闭 XSS 过滤。
+-   DNT：Do Not Track 请求首部字段，告知服务器用户是否愿意接收来自浏览器的跟踪信息。

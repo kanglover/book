@@ -2,9 +2,9 @@
 
 ## 4.1 MVC/MVVM
 
-### MVC
+### 4.1.1 MVC
 
-![](../../assets/MVC.jpg)
+![](../../assets/MVC.png)
 
 1. Model
 
@@ -13,8 +13,8 @@
     总的来说，Model 主要与业务数据有关，与应用内交互状态无关。
 
 2. View
-   M
-   View 是 Model 的可视化表示，表示当前状态的视图。前端 View 负责构建和维护 DOM 元素。 View 对应用程序中的 Model 和 Controller 的了解是有限的，更新 Model 的实际任务都是在 Controller 上。
+
+    View 是 Model 的可视化表示，表示当前状态的视图。前端 View 负责构建和维护 DOM 元素。 View 对应用程序中的 Model 和 Controller 的了解是有限的，更新 Model 的实际任务都是在 Controller 上。
 
 3. Controller
 
@@ -23,28 +23,36 @@
 
 总结就是：用户与页面产生交互的时候，Controller 中的事件触发器就开始工作了，通过调用 Model 层，来完成对 Model 的修改，然后 Model 层再去通知 View 层更新。
 
-### MVVM
+### 4.1.2 MVVM
 
-![](../../assets/MVVM.jpg)
+![](../../assets/MVVM.png)
 
 VM(ViewModel)代替了 C(Controller)。其关键 “改进” 是数据绑定(DataBinding)，也就是说，View 的数据状态发生变化可以直接影响 VM。
 
-### MVC 的问题
+### 4.1.3 MVC 的问题
 
 项目越来越大、逻辑越来越复杂的时候就非常明显，数据流动会很混乱。
 
-![](../../assets/MVC-problem.jpg)
+![](../../assets/mvc-problem.png)
 
-## 4.3 Flux
+## 4.2 Flux
 
 Flux 的核心思想就是数据和逻辑永远单向流动。
 
-![](../../assets/Flux.jpg)
+![](../../assets/Flux.png)
 
-### 基本概念
+### 4.2.1 基本概念
 
-Flux 应用由 3 大部分组成——dispatcher、store 和 view
+Flux 应用由 3 大部分组成——dispatcher、store 和 view。
 
-![](../../assets/flux-process.jpg)
+其中 dispatcher 负责分发事件；store 负责保存数据，同时响应事件并更新数据；view 负责订阅 store 中的数据，并使用这些数据渲染相应的页面。
 
-Flux 中心化控制让所有的请求与改变都只能通过 action 发出，统一由 dispatcher 来分配。好处是 View 可以保持高度简洁，它不需要关心太多的逻辑，只需要关心传入的数据;中心化还控制了所有数据，发生问题时可以方便查询。比起 MVC 架构下数据或逻辑的改动可能来自多个完全不同的源头，Flux 架构追查问题的复杂度和困难度显然要小得多。
+![](../../assets/flux-process.png)
+
+### 4.2.2 Flux 核心思想
+
+Flux 中心化控制让所有的请求与改变都只能通过 action 发出，统一由 dispatcher 来分配。好处是 View 可以保持高度简洁，它不需要关心太多的逻辑，只需要关心传入的数据；中心化还控制了所有数据，发生问题时可以方便查询。比起 MVC 架构下数据或逻辑的改动可能来自多个完全不同的源头，Flux 架构追查问题的复杂度和困难度显然要小得多。
+
+### 4.2.3 Flux 不足
+
+Flux 源码中几乎只有 dispatcher 的现实，但是在每个应用中都需要手动创建一个 dispatcher 的示例。

@@ -134,6 +134,7 @@ export default defineConfig({
             provider: 'local',
         },
         outline: {
+            level: [2, 6],
             label: '页面导航'
         },
         docFooter: {

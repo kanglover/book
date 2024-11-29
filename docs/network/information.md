@@ -98,7 +98,6 @@ Range: bytes=5001-
 Range: bytes=-3000, 5000-7000
 ```
 
-
 针对范围请求，响应会返回状态码为 206 Partial Content 的响应报文。另外，对于多重范围的范围请求，响应会在首部字段 Content- Type 标明 multipart/byteranges 后返回响应报文。
 
 如果服务器端无法响应范围请求，则会返回状态码 200 OK 和完整的 实体内容。
@@ -110,14 +109,15 @@ Range: bytes=-3000, 5000-7000
 内容协商机制是指客户端和服务器端就响应的资源内容进行交涉，然后提供给客户端最为适合的资源。内容协商会以响应资源的语言、字符集、编码方式等作为判断的基准。
 
 相关的首部字段
-* Accept
-* Accept-Charset
-* Accept-Encoding
-* Accept-Language
-* Content-Language
+
+-   Accept
+-   Accept-Charset
+-   Accept-Encoding
+-   Accept-Language
+-   Content-Language
 
 内容协商技术：
-* 服务器驱动协商：由服务端进行内容协商，参考请求字段，在服务端处理。
-* 客户端驱动协商：由客户端进行内容协商，从浏览器的可选项列表中手动选择，或者通过 JavaScript 脚本自动选择。
-* 透明协商：服务器驱动和客户端驱动的结合。
 
+-   服务器驱动协商：由服务端进行内容协商，参考请求字段，在服务端处理。
+-   客户端驱动协商：由客户端进行内容协商，从浏览器的可选项列表中手动选择，或者通过 JavaScript 脚本自动选择。
+-   透明协商：服务器驱动和客户端驱动的结合。
