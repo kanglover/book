@@ -2,10 +2,29 @@ import {defineConfig} from 'vitepress';
 
 export default defineConfig({
     base: '/book',
-    title: 'Notes',
+    title: 'kanglover 的读书笔记',
     description: 'Reading Notes',
     cleanUrls: true,
+    head: [
+        // 浏览器中图标
+        ['link', {rel: 'icon', href: 'https://avatars.githubusercontent.com/u/35287056?s=96&v=4'}],
+        // 添加百度统计代码
+        [
+            'script',
+            {},
+            `
+                var _hmt = _hmt || [];
+                (function() {
+                    var hm = document.createElement("script");
+                    hm.src = "https://hm.baidu.com/hm.js?a347aee2eb7431e3e3a8b06aef961ecb";
+                    var s = document.getElementsByTagName("script")[0];
+                    s.parentNode.insertBefore(hm, s);
+                })();
+            `,
+        ],
+    ],
     themeConfig: {
+        logo: 'https://avatars.githubusercontent.com/u/35287056?s=96&v=4',
         nav: [
             {text: 'Home', link: '/'},
             {
@@ -72,8 +91,7 @@ export default defineConfig({
                 {
                     text: 'Vue 框架',
                     base: '/framework',
-                    items: [
-                    ],
+                    items: [],
                 },
             ],
             psychology: {
@@ -83,23 +101,55 @@ export default defineConfig({
                         text: '自控力',
                         collapsed: false,
                         items: [
-                            {text: '1. 什么是意志力', link: '/self-control/what'},
-                            {text: '2. 意志力的本能', link: '/self-control/instinct'},
-                            {text: '3. 自控力的极限', link: '/self-control/exercise'},
-                            {text: '4. 容忍罪恶', link: '/self-control/failure'},
-                            {text: '5. 误把渴望当幸福', link: '/self-control/desire'},
+                            {
+                                text: '1. 什么是意志力',
+                                link: '/self-control/what',
+                            },
+                            {
+                                text: '2. 意志力的本能',
+                                link: '/self-control/instinct',
+                            },
+                            {
+                                text: '3. 自控力的极限',
+                                link: '/self-control/exercise',
+                            },
+                            {
+                                text: '4. 容忍罪恶',
+                                link: '/self-control/failure',
+                            },
+                            {
+                                text: '5. 误把渴望当幸福',
+                                link: '/self-control/desire',
+                            },
                         ],
                     },
                 ],
             },
             economy: {
                 base: '/economy',
-                items: [
-                    {text: '小狗钱钱', link: '/money-dog'},
-                ]
+                items: [{text: '小狗钱钱', link: '/money-dog'}],
+            },
+        },
+        search: {
+            provider: 'local',
+        },
+        outline: {
+            label: '页面导航'
+        },
+        docFooter: {
+            prev: '上一页',
+            next: '下一页'
+        },
+        editLink: {
+            pattern: 'https://github.com/kanglover/book/edit/main/docs/:path',
+            text: '在 GitHub 上编辑此页面'
+        },
+        lastUpdated: {
+            text: '最后更新于',
+            formatOptions: {
+                dateStyle: 'short'
             }
         },
-
         socialLinks: [{icon: 'github', link: 'https://github.com/kanglover'}],
     },
 });
