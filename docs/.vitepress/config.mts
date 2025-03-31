@@ -84,6 +84,10 @@ export default defineConfig({
                                     text: '4. Flux 架构模式',
                                     link: '/further-react/flux',
                                 },
+                                {
+                                    text: '5. Redux 架构模式',
+                                    link: '/further-react/redux',
+                                },
                             ],
                         },
                     ],

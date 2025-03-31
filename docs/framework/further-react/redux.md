@@ -203,3 +203,20 @@ export default function promiseMiddleware({dispatch}) {
 3. redux-saga
 
 用 generator 替代 promise 实现异步流控制。
+
+## 5.4 Redux 与路由
+
+**React Router**
+
+提供声明式路由配置，以及嵌套路由、路径匹配和参数传递。
+
+**React Router Redux**
+
+结合 Redux 和 React Router，路由状态保存在 Redux store 中，通过 dispatch 触发路由跳转。
+
+```js
+import { push } from 'react-router-redux';
+// 切换路由到 /home
+store.dispatch(push('/home'));
+```
+
